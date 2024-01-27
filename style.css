@@ -1,16 +1,19 @@
 body {
     color: white;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: Arial,Helvetica,sans-serif;
     width: 100%;
     margin: 0;
     padding: 0;
     gap: 0;
+    overflow-x: visible;
+    background-color: #1a1e1f;
 }
 
 .wrapper {
     margin: 0;
     padding: 0;
     gap: 0;
+    overflow-x: visible;
 }
 
 a {
@@ -27,6 +30,13 @@ a:hover {
     color: #0c91d4;
 }
 
+.header {
+    overflow-x: visible;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
 header {
     background-color: #1a1e1f;
     display: flex;
@@ -34,6 +44,11 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 0px 270px;
+}
+
+.scrolled {
+    opacity: 95%;
+    background-color: #222222;
 }
 
 header div {
@@ -182,28 +197,37 @@ header div {
 }
 
 .partnersWrapper {
-    padding: 0 270px;
+    padding: 20px 0 80px;
     display: flex;
     flex-direction: column;
 }
 
 .partnersTitle {
     font-size: 24px;
+    padding: 0 270px 20px;
 }
 
-.carouselWrapper{
+.carouselWrapper {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 }
 
-.carousel{
+.carousel {
     list-style: none;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
+    width: 1000px;
+    height: 100px;
+    margin: 30px;
+}
+
+.card {
+    margin: 0 50px;
+    transition: all 1s ease;
 }
 
 .rightBtn {
@@ -228,6 +252,31 @@ header div {
 
 .leftBtn:hover img , .rightBtn:hover img{
     filter: invert(61%) sepia(6%) saturate(7%) hue-rotate(343deg) brightness(100%) contrast(94%);
+}
+
+.hidden {
+    display: none;
+}
+
+.carouselButtons{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.carouselButton {
+    background-color: #e8e6e6;
+    border: none;
+    border-radius: 50px;
+    margin: 0 5px;
+    width: 5px;
+    height: 5px;
+    padding: 0;
+    cursor: pointer;
+}
+
+.activeButton {
+    background-color: #ffffff;
 }
 
 .faq {
@@ -268,7 +317,7 @@ header div {
 }
 
 .question {
-    padding: 30px 0 5px;
+    padding: 30px 0;
     border-bottom: solid 1px #343131;
     font-size: 18px;
     cursor: pointer;
@@ -276,10 +325,9 @@ header div {
 
 .panelTitle::after {
     content: url(./images/faq.svg);
-    position: relative;
+    position: absolute;
     filter: invert(94%) sepia(4%) saturate(22%) hue-rotate(314deg) brightness(92%) contrast(92%);
-    bottom: 20px;
-    left: 870px;
+    right: 320px;
 }
 
 #q1, #q2, #q3 {
